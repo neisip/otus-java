@@ -13,12 +13,7 @@
     </modules>
 
     <properties>
-        <maven-assembly-plugin.version>3.1.1</maven-assembly-plugin.version>
-        <maven-assembly-plugin.descriptorSuffix>jar-with-dependencies</maven-assembly-plugin.descriptorSuffix>
         <guava.version>28.0-jre</guava.version>
-        <maven.version>3.8.1</maven.version>
-        <java.version>1.8</java.version>
-<!--        <exec.mainClass>com.otus.homework.hw1.Hw1Application</exec.mainClass>-->
     </properties>
 
     <dependencyManagement>
@@ -39,43 +34,5 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven-assembly-plugin.version}</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>${maven-assembly-plugin.descriptorSuffix}</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>${exec.mainClass}</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.version}</version>
-                <configuration>
-
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-
-        </plugins>
-    </build>
 
 </project>
